@@ -28,7 +28,7 @@
   margin-bottom: calc(2px - var(--uc-bm-height) - 2 * var(--uc-bm-padding));
   transform: rotateX(90deg);
   transform-origin: top;
-  transition: transform 135ms linear 600ms !important;
+  transition: transform 13ms linear 60ms !important; /*default 135ms and 600ms*/
   z-index: 1;
 
 }
@@ -433,6 +433,7 @@ panelview toolbarbutton.subviewbutton .toolbarbutton-text,
 #pageActionSeparator, 
 #pageActionButton,
 #pocket-button-box,
+#nav-bar-overflow-button,
 menuseparator,
 .autocomplete-history-dropmarker, 
 #identity-box, 
@@ -458,4 +459,3 @@ menuseparator,
 .urlbarView-body-outer                          { margin: -2px !important; }                                                         /* remove line of url droplist */ 
 
 /*-------------------------------------------------------------------------------------------------------*/
-
