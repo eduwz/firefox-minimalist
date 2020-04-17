@@ -1,18 +1,21 @@
 /*-------------------------------------------------------------------------------------------------------*/
-/* stolen code from https://github.com/MrOtherGuy/firefox-csshacks */
+/* stolen code from https://github.com/MrOtherGuy/firefox-csshacks & https://www.reddit.com/r/FirefoxCSS/ */
+/* density: compact */
+/* theme: dark */
 /*-------------------------------------------------------------------------------------------------------*/
 /*INDEX*/
 /*autohide_bookmarks_toolbar.css*/
 /*navbar_tabs_responsive_oneliner.css*/
-/*urlbar_full_width.css*/
 /*page_action_buttons_on_hover.css*/
 /*minimal_text_fields.css*/
 /*theme_popups_and_menus.css*/
 /*theme_color_variables.css*/
 /*tab_close_button_always_on_hover.css*/
 /*hide_toolbox_top_bottom_borders.css*/
+/*mute button on pin tab align*/
 /*hidin sumshit*/
 /*sum visual teaks*/
+/*megabar*/
 /*-------------------------------------------------------------------------------------------------------*/
 
 /*autohide_bookmarks_toolbar.css*/
@@ -28,7 +31,7 @@
   margin-bottom: calc(2px - var(--uc-bm-height) - 2 * var(--uc-bm-padding));
   transform: rotateX(90deg);
   transform-origin: top;
-  transition: transform 13ms linear 60ms !important; /*default 135ms and 600ms*/
+  transition: transform 13ms linear 60ms !important;
   z-index: 1;
 
 }
@@ -86,7 +89,7 @@
   :root[uidensity="compact"] #navigator-toolbox{ --uc-toolbar-height: 32px; }
   :root[uidensity="touch"] #navigator-toolbox{ --uc-toolbar-height: 40px; }
 
-  #TabsToolbar{ margin-left: var(--uc-navigationbar-width); }
+  #TabsToolbar{ margin-left: var(--uc-navigationbar-width);}
   #tabbrowser-tabs{ --tab-min-height: var(--uc-toolbar-height) !important; }
   
   /* This isn't useful when tabs start in the middle of the window */
@@ -97,8 +100,9 @@
     margin-right:calc(100vw - var(--uc-navigationbar-width));
     margin-top: calc(0px - var(--uc-toolbar-height));
   }
-
-  /* Window drag space  */
+  
+  
+/* Window drag space  */
   :root[tabsintitlebar="true"] #nav-bar{ padding-left: 24px !important; }
 
 /* Rules specific to window controls on right layout */
@@ -115,47 +119,6 @@
 }
 /* Fix customization view */
 #customization-panelWrapper > .panel-arrowbox > .panel-arrow{ margin-inline-end: initial !important; }
-/* First tab margin fix*/
-
-/*-------------------------------------------------------------------------------------------------------*/
-
-/*urlbar_full_width.css*/
-/* Make urlbar popup appear full size like it did before urlbar re-design */
-
-#urlbar-container,
-#urlbar{
-  position: static !important;
-  display: -moz-box !important;
-}
-#urlbar{
-  height: auto !important;
-  width: auto !important;
-  border: 0px solid white;
-  border-color:var(--lwt-toolbar-field-border-color, hsla(240,5%,5%,.25));
-  background-color: var(--lwt-toolbar-field-background-color, hsla(0,0%,100%,.8));
-  border-radius: var(--toolbarbutton-border-radius);
-}
-
-#urlbar[focused]{ border-color: var(--lwt-toolbar-field-border-focus, highlight) }
-
-.urlbarView{
-  position: absolute !important;
-  margin: 0 !important;
-  left: 0 !important;
-  width: 100vw !important;
-  border-width: 1px 0;
-  top: var(--urlbar-toolbar-height);
-  background-color: var(--lwt-toolbar-field-focus, inherit);
-  z-index: 4;
-  box-shadow: 0 1px 4px rgba(0,0,0,.05);
-}
-
-#urlbar > #urlbar-input-container{ padding: 0px !important; width: auto !important; height: auto !important; }
-#urlbar > #urlbar-background{ display: none !important; }
-
-/* This may seem pretty weird, but it gets around an issue where the height of urlbar may suddenly change when one starts typing into it */
-/* If you are otherwise modifying the urlbar height then you might need to modify the height of this too */
-#urlbar > #urlbar-input-container::before{ content: ""; display: -moz-box; height: 24px; }
 
 /*-------------------------------------------------------------------------------------------------------*/
 
@@ -177,11 +140,10 @@
 
 /*-------------------------------------------------------------------------------------------------------*/
 
-/* minimal_text_fields.css*/
-
+/*minimal_text_fields.css*/
 :root:not([customizing]){
-  --lwt-toolbar-field-background-color: #2a2a2e !important;
-  --lwt-toolbar-field-border-color: #2a2a2e !important;
+  --lwt-toolbar-field-background-color: transparent !important;
+  --lwt-toolbar-field-border-color: transparent !important;
   --toolbar-bgcolor: #2a2a2e !important;
 }
 
@@ -205,8 +167,9 @@
 #identity-box ~ *,
 .searchbar-textbox > *{
   opacity: 1;
-  transition: opacity 150ms linear
-} 
+  transition: opacity 150ms linear;
+  border-image-slice: 0 !important;
+}
 
 #urlbar .urlbar-input-box,
 .searchbar-textbox > moz-input-box{ opacity: 0.6 }
@@ -224,10 +187,10 @@
 #urlbar:not(:hover) #identity-box{ background-image: radial-gradient(closest-side circle at 16px, orange 10%,transparent 35% ); }
 #urlbar:not(:hover) #identity-box.verifiedIdentity{ background-image: radial-gradient(closest-side circle at 16px, lime 10%,transparent 35% ); }
 #urlbar:not(:hover) #identity-box > *{ opacity: 0 }
-/*
+
 :root[title="Firefox Nightly"] #identity-box,
 :root[title="Mozilla Firefox"] #identity-box,
-*/
+
 #urlbar[pageproxystate=invalid]:not([usertyping]) #identity-box,
 #identity-box:hover,
 #identity-box.chromeUI,
@@ -237,6 +200,8 @@
 
 #identity-box > #identity-icon-labels{ transition: max-width 150ms linear !important; }
 #identity-box:not(:hover) > #identity-icon-labels{ max-width: 0px !important; }
+
+#urlbar > #urlbar-background{ display: none !important; } 
 
 /*-------------------------------------------------------------------------------------------------------*/
 
@@ -273,14 +238,14 @@ menu{
 }
 
 menupopup{
-  background-color:var(--uc-dark-bkgnd-color) !important;
+  background-color:var(--uc-dark-bkgnd-color) !important; 
 }
 
 menuitem,
 menu{
 	min-height:24px !important;
-      color: var(--uc-text-color) !important;
-      padding: 3px 0px 3px 0px !important;
+  color: var(--uc-text-color) !important;
+  padding: 3px 0px 3px 0px !important;
 }
 
 menuitem[disabled="true"],
@@ -300,6 +265,7 @@ menu[disabled="true"]:hover{
 
 .menu-right{ filter: invert(100%) }
 #context-navigation{ background-color: transparent !important; }
+
 /* POPUP PANELS */
 
 .panel-subviews,
@@ -325,7 +291,6 @@ panelview,
 #widget-overflow-mainView #searchbar > .searchbar-textbox{
   background-color: var(--uc-light-bkgnd-color) !important;
   color: var(--uc-text-color) !important;
-  
 }
 
 panelview toolbarbutton.subviewbutton .toolbarbutton-text,
@@ -394,7 +359,7 @@ panelview toolbarbutton.subviewbutton .toolbarbutton-text,
 /*tab_close_button_always_on_hover.css*/
 /* Always show tab close button on hover and never otherwise */
 .tabbrowser-tab .tab-close-button{
-  display: visible;   /* default is none */
+  display:none;
 }
 .tabbrowser-tab:not([pinned]):hover .tab-close-button{
   display:-moz-box !important;
@@ -403,22 +368,32 @@ panelview toolbarbutton.subviewbutton .toolbarbutton-text,
 /*-------------------------------------------------------------------------------------------------------*/
 
 /*hide_toolbox_top_bottom_borders.css*/
-
 :root[sizemode="normal"]{ border-top: none !important }
 #navigator-toolbox::after{ content: none !important }
 #navigator-toolbox{ border-bottom: none !important }
 /* Removes few remaining extra lines above tabs in non-maximized windows */
 /* Also prevents small vertical shift when moving tabs in compact density - who knows why */
-:root[sizemode="normal"] #titlebar{ -moz-appearance: none !important; margin-top: -9px; }  /* margin-top removes space on top*/
+:root[sizemode="normal"] #titlebar{ -moz-appearance: none !important;}
 
 
 /* OPTIONAL - uncomment to remove still remaining space atop of tabs */
 /* This just increases the height of tabs by few pixels, not decrease the toolbar height */
 
 /* Fx pre-65 */
-/* #navigator-toolbox > #TabsToolbar{margin-top: -2px;} */  
+/* #navigator-toolbox > #TabsToolbar{margin-top: -2px;} */
+:root[sizemode="normal"] #TabsToolbar{ margin-top: -10px !important }
+:root[sizemode="maximized"] #TabsToolbar{ margin-top: -1px !important }
 /* Fx65+ */
-/* #TabsToolbar > .toolbar-items > spacer{ display: none; } */
+/* #TabsToolbar > .toolbar-items > spacer{ display: none; }
+
+/*-------------------------------------------------------------------------------------------------------*/
+
+/*mute button on pin tab align*/
+.tab-icon-overlay {
+  margin-top: -2px !important;
+  margin-right: 0px !important;
+  margin-left: -16px !important;
+}
 
 /*-------------------------------------------------------------------------------------------------------*/
 
@@ -426,7 +401,8 @@ panelview toolbarbutton.subviewbutton .toolbarbutton-text,
 .bookmark-item[type="menu"][container="true"] menuitem[label="Open All in Tabs"],
 .bookmark-item[type="menu"][container="true"]
 .bookmarks-actions-menuseparator, 
-#library-button, #firefox-account-button, 
+#library-button,
+#firefox-account-button, 
 .webextension-browser-action, 
 #star-button-box, 
 #reader-mode-button, 
@@ -436,26 +412,64 @@ panelview toolbarbutton.subviewbutton .toolbarbutton-text,
 #nav-bar-overflow-button,
 menuseparator,
 .autocomplete-history-dropmarker, 
-#identity-box, 
 .urlbar-history-dropmarker.urlbar-icon.chromeclass-toolbar-additional,
 #TabsToolbar .titlebar-placeholder[type="pre-tabs"], 
-#identity-icon-labels {
+#identity-icon-labels,
+#fxa-toolbar-menu-button,
+#sidebar-button,
+.search-one-offs,
+#urlbar-go-button{
   display: none !important;
 }
 
 /*-------------------------------------------------------------------------------------------------------*/
 
 /*sum visual teaks*/
-#PanelUI-button, .panel-arrow                   { -moz-box-ordinal-group: 0 !important; }                                            /* hamburger menu to the left */
-#navigator-toolbox                              { border-bottom: 0px solid var(--chrome-content-separator-color) !important; }       /* hide line at the bottom of tabbar */
-#navigator-toolbox                              { background-color: #2a2a2e !important; }                                            /* background of background? */
-#urlbar-container, #search-container            { padding-block: 0px !important; margin-inline: 0px !important; }                    /* hide space between urlbar and tabbar also fill addressbar with urlbar */
-.tabbrowser-tab                                 { height: 34px !important; min-width: 25px !important; max-width: 150px !important; }/* set tabs height and width */
-.tabbrowser-tab::after, .tabbrowser-tab::before { border-left: none !important; }                                                    /* disapear spacer between tabs */
-.tab-background[selected="true"]                { background-color: #0063b1 !important; background-image: none !important; }         /* active tab background */
-.tab-background[selected="true"]                { height: 30px !important; }                                                         /* height of active tab */
-.tab-background:not([selected])                 { background-color: #2a2a2e !important; }                                            /* inactive tab background */
-.tab-line                                       { height: 0px !important; }                                                          /* blue line above active tab */
-.urlbarView-body-outer                          { margin: -2px !important; }                                                         /* remove line of url droplist */ 
+#PanelUI-button, .panel-arrow                       { -moz-box-ordinal-group: 0 !important; }                                            /* hamburger menu to the left */
+#navigator-toolbox                                  { border-bottom: 0px solid var(--chrome-content-separator-color) !important; }       /* hide line at the bottom of tabbar */
+#navigator-toolbox                                  { background-color: #2a2a2e !important; }                                            /* background of background? */
+#urlbar-container, #search-container, #urlbar       { padding-block: 0px !important; margin-inline: 0px !important; }                    /* hide space between urlbar and tabbar also fill addressbar with urlbar */
+.tabbrowser-tab[fadein]                             { height: 33px !important; min-width: 25px !important; max-width: 140px !important; }/* set tabs height and width */
+.tabbrowser-tab::after, .tabbrowser-tab::before     { border-left: none !important; }                                                    /* disapear spacer between tabs */
+.tab-background[selected="true"]                    { background-color: #0063b1 !important; background-image: none !important; }         /* active tab background */
+.tab-background[selected="true"]                    { height: 29px !important; }                                                         /* height of active tab */
+.tab-background:not([selected])                     { background-color: #2a2a2e !important; }                                            /* inactive tab background */
+.tab-line                                           { height: 0px !important; }                                                          /* blue line above active tab */
+/*.urlbarView-body-outer                              { margin: -2px !important; }                                                         /* remove line of url droplist */ 
+.tab-icon-image, .tab-close-button, .tab-icon-sound { margin-top: -2px !important; }                                                     /* align icons on tab */
+.tab-text, .tab-label                               { margin-top: -2px !important; }                                                     /* align tex on tab */
+/*-------------------------------------------------------------------------------------------------------*/
+
+/*megabar*/
+#urlbar[breakout][breakout-extend] {
+        top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+        left: 0 !important;
+        width: 100% !important;
+    }
+
+#urlbar[breakout][breakout-extend] > #urlbar-input-container {
+        height: var(--urlbar-height) !important;
+        padding-block: 0 !important;
+        padding-inline: 0 !important;
+    }
+
+#urlbar[breakout][breakout-extend] > #urlbar-background {
+        animation-name: none !important;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .05) !important;
+    }
+
+.urlbarView {
+        margin-inline: 0 !important;
+        width: 100% !important;
+    }
+
+.urlbarView-body-inner {
+  border: none !important;
+}
+
+.urlbarView-row {
+  height: 30px !important;
+  padding: 0px !important;
+}
 
 /*-------------------------------------------------------------------------------------------------------*/
