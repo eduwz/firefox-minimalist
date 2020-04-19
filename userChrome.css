@@ -469,7 +469,10 @@ menuseparator,
 
 .urlbarView-row {
   height: 30px !important;
-  padding: 0px !important;
+}
+
+:root[sizemode="normal"] .urlbarView-row {
+  margin-bottom: 10px !important;
 }
 
 /*-------------------------------------------------------------------------------------------------------*/
