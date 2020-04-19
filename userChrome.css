@@ -468,11 +468,7 @@ menuseparator,
 }
 
 .urlbarView-row {
-  height: 30px !important;
-}
-
-:root[sizemode="normal"] .urlbarView-row {
-  margin-bottom: 10px !important;
+  max-height: 40px !important;
 }
 
 /*-------------------------------------------------------------------------------------------------------*/
