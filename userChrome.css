@@ -2,6 +2,7 @@
 /* stolen code from https://github.com/MrOtherGuy/firefox-csshacks & https://www.reddit.com/r/FirefoxCSS/ */
 /* density: compact */
 /* theme: dark */
+/* i recommend using @import instead of this spaghetti */
 /*-------------------------------------------------------------------------------------------------------*/
 /*INDEX*/
 /*autohide_bookmarks_toolbar.css*/
@@ -21,17 +22,19 @@
 /*autohide_bookmarks_toolbar.css*/
 #PersonalToolbar{
   --uc-bm-height: 20px; /* Might need to adjust if the toolbar has other buttons */
-  --uc-bm-padding: 2px; /* Vertical padding to be applied to bookmarks */
+  --uc-bm-padding: 4px; /* Vertical padding to be applied to bookmarks */
+  --uc-autohide-toolbar-delay: 400ms; /* The toolbar is hidden after 0.4s */
 }
 
 :root[uidensity="compact"] #PersonalToolbar{ --uc-bm-padding: 1px }
 :root[uidensity="touch"] #PersonalToolbar{ --uc-bm-padding: 6px }
 
 #PersonalToolbar:not([customizing]){
-  margin-bottom: calc(2px - var(--uc-bm-height) - 2 * var(--uc-bm-padding));
+  position: relative;
+  margin-bottom: calc(0px - var(--uc-bm-height) - 2 * var(--uc-bm-padding));
   transform: rotateX(90deg);
   transform-origin: top;
-  transition: transform 13ms linear 60ms !important;
+  transition: transform 50ms linear var(--uc-autohide-toolbar-delay) !important;
   z-index: 1;
 
 }
@@ -45,11 +48,12 @@
 #nav-bar:focus-within + #PersonalToolbar{
   transition-delay: 100ms !important;
   transform: rotateX(0);
-}
+} 
 */
 
 /* Show when cursor is over the toolbar area */
 #navigator-toolbox:hover > #PersonalToolbar{
+  transition-delay: 100ms !important;
   transform: rotateX(0);
 }
 
@@ -403,7 +407,7 @@ panelview toolbarbutton.subviewbutton .toolbarbutton-text,
 .bookmarks-actions-menuseparator, 
 #library-button,
 #firefox-account-button, 
-.webextension-browser-action, 
+/* .webextension-browser-action, */
 #star-button-box, 
 #reader-mode-button, 
 #pageActionSeparator, 
@@ -470,5 +474,6 @@ menuseparator,
 .urlbarView-row {
   max-height: 40px !important;
 }
+
 
 /*-------------------------------------------------------------------------------------------------------*/
