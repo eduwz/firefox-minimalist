@@ -107,7 +107,7 @@
   
   
 /* Window drag space  */
-  :root[tabsintitlebar="true"] #nav-bar{ padding-left: 24px !important; }
+  :root[tabsintitlebar="true"] #nav-bar{ padding-left: 24px !important; } /* not sure if this working anymore*/
 
 /* Rules specific to window controls on right layout */
   @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
@@ -377,17 +377,12 @@ panelview toolbarbutton.subviewbutton .toolbarbutton-text,
 #navigator-toolbox{ border-bottom: none !important }
 /* Removes few remaining extra lines above tabs in non-maximized windows */
 /* Also prevents small vertical shift when moving tabs in compact density - who knows why */
-:root[sizemode="normal"] #titlebar{ -moz-appearance: none !important;}
-
+/* :root[sizemode="normal"] #titlebar{ -moz-appearance: none !important;} - this broke too lazy to find out so yeah.. */
 
 /* OPTIONAL - uncomment to remove still remaining space atop of tabs */
 /* This just increases the height of tabs by few pixels, not decrease the toolbar height */
 
-/* Fx pre-65 */
-/* #navigator-toolbox > #TabsToolbar{margin-top: -2px;} */
-:root[sizemode="normal"] #TabsToolbar{ margin-top: -10px !important }
-:root[sizemode="maximized"] #TabsToolbar{ margin-top: -1px !important }
-/* Fx65+ */
+
 /* #TabsToolbar > .toolbar-items > spacer{ display: none; }
 
 /*-------------------------------------------------------------------------------------------------------*/
@@ -429,19 +424,22 @@ menuseparator,
 /*-------------------------------------------------------------------------------------------------------*/
 
 /*sum visual teaks*/
+
+#nav-bar { border: none !important; }
 #PanelUI-button, .panel-arrow                       { -moz-box-ordinal-group: 0 !important; }                                            /* hamburger menu to the left */
 #navigator-toolbox                                  { border-bottom: 0px solid var(--chrome-content-separator-color) !important; }       /* hide line at the bottom of tabbar */
 #navigator-toolbox                                  { background-color: #2a2a2e !important; }                                            /* background of background? */
 #urlbar-container, #search-container, #urlbar       { padding-block: 0px !important; margin-inline: 0px !important; }                    /* hide space between urlbar and tabbar also fill addressbar with urlbar */
-.tabbrowser-tab[fadein]                             { height: 33px !important; min-width: 25px !important; max-width: 140px !important; }/* set tabs height and width */
+.tabbrowser-tab[fadein]                             { height: 28px !important; min-width: 25px !important; max-width: 140px !important; }/* set tabs height and width */
 .tabbrowser-tab::after, .tabbrowser-tab::before     { border-left: none !important; }                                                    /* disapear spacer between tabs */
 .tab-background[selected="true"]                    { background-color: #0063b1 !important; background-image: none !important; }         /* active tab background */
-.tab-background[selected="true"]                    { height: 29px !important; }                                                         /* height of active tab */
+.tab-background[selected="true"]                    { height: 28px !important;}                                                          /* height of active tab */
 .tab-background:not([selected])                     { background-color: #2a2a2e !important; }                                            /* inactive tab background */
 .tab-line                                           { height: 0px !important; }                                                          /* blue line above active tab */
-/*.urlbarView-body-outer                              { margin: -2px !important; }                                                         /* remove line of url droplist */ 
+/*.urlbarView-body-outer                              { margin: -2px !important; }                                                       /* remove line of url droplist */ 
 .tab-icon-image, .tab-close-button, .tab-icon-sound { margin-top: -2px !important; }                                                     /* align icons on tab */
 .tab-text, .tab-label                               { margin-top: -2px !important; }                                                     /* align tex on tab */
+
 /*-------------------------------------------------------------------------------------------------------*/
 
 /*megabar*/
