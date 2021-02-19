@@ -82,6 +82,7 @@
   #navigator-toolbox{
     --uc-navigationbar-width: 40vw;
     --uc-toolbar-height: 40px;
+	separator: none;
   }
 /* prevent urlbar overflow on narrow windows */
 /* Dependent on how many items are in navigation toolbar ADJUST AS NEEDED */
@@ -99,6 +100,7 @@
   /* This isn't useful when tabs start in the middle of the window */
   .titlebar-placeholder[type="pre-tabs"],
   .titlebar-spacer[type="pre-tabs"]{ display: none }
+ 
   
   #navigator-toolbox > #nav-bar{
     margin-right:calc(100vw - var(--uc-navigationbar-width));
@@ -439,6 +441,7 @@ menuseparator,
 /*.urlbarView-body-outer                              { margin: -2px !important; }                                                       /* remove line of url droplist */ 
 .tab-icon-image, .tab-close-button, .tab-icon-sound { margin-top: -2px !important; }                                                     /* align icons on tab */
 .tab-text, .tab-label                               { margin-top: -2px !important; }                                                     /* align tex on tab */
+hbox.titlebar-spacer[type="pre-tabs"] { border: none !important; }
 
 /*-------------------------------------------------------------------------------------------------------*/
 
