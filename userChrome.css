@@ -388,11 +388,17 @@ panelview toolbarbutton.subviewbutton .toolbarbutton-text,
 
 /*-------------------------------------------------------------------------------------------------------*/
 
-/*mute button on pin tab align*/
-.tab-icon-overlay {
+/*mute button on pin tab align while on pp */
+.tab-icon-overlay[pinned="true"] {
   margin-top: -2px !important;
   margin-right: 0px !important;
   margin-left: -16px !important;
+}
+/*mute button tab align while on pp*/
+.tab-icon-overlay {
+  margin-top: -2px !important;
+  margin-right: 0px !important;
+  margin-left: -22px !important;
 }
 
 /*-------------------------------------------------------------------------------------------------------*/
