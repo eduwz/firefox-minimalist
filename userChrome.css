@@ -437,12 +437,12 @@ menuseparator,
 #navigator-toolbox                                  { border-bottom: 0px solid var(--chrome-content-separator-color) !important; }       /* hide line at the bottom of tabbar */
 #navigator-toolbox                                  { background-color: #2a2a2e !important; }                                            /* background of background? */
 #urlbar-container, #search-container, #urlbar       { padding-block: 0px !important; margin-inline: 0px !important; }                    /* hide space between urlbar and tabbar also fill addressbar with urlbar */
-#titlebar											{max-height: 36px !important;}														 /* this fix some inconsistency between urlbar and tabbar height */
-.tabbrowser-tab[fadein]                             { height: 28px !important; min-width: 25px !important; max-width: 140px !important; }/* set tabs height and width */
+#titlebar											{ max-height: 36px !important; }													 /* this fix some inconsistency between urlbar and tabbar height */
+.tabbrowser-tab[fadein]                             { max-height: 28px !important; min-width: 25px !important; max-width: 140px !important; }/* set tabs height and width */
 .tabbrowser-tab::after, .tabbrowser-tab::before     { border-left: none !important; }                                                    /* disapear spacer between tabs */
 .tabbrowser-tab										{ padding: 0px !important; margin-left: 1px !important;}							 /* remove space between tabs */
 .tab-background[selected="true"]                    { background-color: #0063b1 !important; background-image: none !important; }         /* active tab background */
-.tab-background[selected="true"]                    { height: 28px !important;}                                                          /* height of active tab */
+.tab-background[selected="true"]                    { height: 28px !important; }                                                         /* height of active tab */
 .tab-background:not([selected])                     { background-color: #2a2a2e !important; }                                            /* inactive tab background */
 .tab-line                                           { height: 0px !important; }                                                          /* blue line above active tab */
 .urlbarView-body-outer                              { margin: -2px !important; }                                                      	 /* remove line of url droplist */ 
