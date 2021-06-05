@@ -16,9 +16,10 @@
 /*theme_color_variables.css*/
 /*tab_close_button_always_on_hover.css*/
 /*hide_toolbox_top_bottom_borders.css*/
-/*mute button on tab*/
 /*compact_urlbar_megabar.css*/
 /*sum extra visual teaks*/
+/*mute button on pinned tab align*/
+
 
 /*-------------------------------------------------------------------------------------------------------*/
 
@@ -49,8 +50,9 @@ menupopup > menu{ padding-block: 0.3em !important; }
 .tab-close-button{
   margin-inline-start: 0px !important;
   width: 20px !important;
-  height: 20px !important;
-  padding: 5px !important;
+  height: 20px !important; 
+  padding: 5px !important; 
+  background: steelblue !important;
 }
 
 #tabbrowser-tabs{ --uc-tabs-scrollbutton-border: 2px }
@@ -59,10 +61,9 @@ menupopup > menu{ padding-block: 0.3em !important; }
 
 /* OPTIONAL - show audio label in compact mode and make the audio icon behavior match non-compact mode */
 
-.tab-secondary-label:is([soundplaying], [muted], [activemedia-blocked], [pictureinpicture]){ display: -moz-box !important; margin-bottom: 1px }
+.tab-secondary-label:is([soundplaying], [muted], [activemedia-blocked], [pictureinpicture]){ display: -moz-box !important; margin-bottom: -1px }
 #TabsToolbar:not(:hover) .tab-icon-image{ opacity: 1 !important; }
 #TabsToolbar:not(:hover) .tab-icon-overlay:not([pinned]){ opacity: 0 !important; }
-
 
 /*-------------------------------------------------------------------------------------------------------*/
 
@@ -129,9 +130,10 @@ menupopup > menu{ padding-block: 0.3em !important; }
   
   /* Modify these to change relative widths or default height */
   #navigator-toolbox{
-    --uc-navigationbar-width: 40vw;
-    --uc-toolbar-height: 40px;
-    --uc-urlbar-min-width: 50vw; /* minimum width for opened urlbar */
+    --uc-navigationbar-width: 50vw;
+    --uc-toolbar-height: 30px;
+    /*min-height: 30px; */
+    --uc-urlbar-min-width: 20vw; /* minimum width for opened urlbar */
   }
   @media (-moz-proton){
     #scrollbutton-up,#scrollbutton-down{ border-block-width: 2px !important; }
@@ -143,8 +145,8 @@ menupopup > menu{ padding-block: 0.3em !important; }
   }
 
   /* Override for other densities */
-  :root[uidensity="compact"] #navigator-toolbox{ --uc-toolbar-height: 28px; }
-  :root[uidensity="touch"] #navigator-toolbox{ --uc-toolbar-height: 40px; }
+  :root[uidensity="compact"] #navigator-toolbox{ --uc-toolbar-height: 30px; }
+  :root[uidensity="touch"] #navigator-toolbox{ --uc-toolbar-height: 30px; }
 
   #TabsToolbar{
     margin-left: var(--uc-navigationbar-width);
@@ -159,7 +161,7 @@ menupopup > menu{ padding-block: 0.3em !important; }
   
   #navigator-toolbox > #nav-bar{
     margin-right:calc(100vw - var(--uc-navigationbar-width));
-    margin-top: calc(0px - var(--uc-toolbar-height));
+    margin-top: calc(2px - var(--uc-toolbar-height));
   }
 
   /* Window drag space  */
@@ -178,7 +180,7 @@ menupopup > menu{ padding-block: 0.3em !important; }
   #urlbar[open]:focus-within{ min-width: var(--uc-urlbar-min-width,none) !important; }
 
   /* Hide dropdown placeholder */
-  #urlbar-container:not(:hover) .urlbar-history-dropmarker{ margin-inline-start: -28px; }
+/*  #urlbar-container:not(:hover) .urlbar-history-dropmarker{ margin-inline-start: -28px; } */
   
 }
 /* Fix customization view */
@@ -193,6 +195,7 @@ menupopup > menu{ padding-block: 0.3em !important; }
   margin-inline-end: -26px;
   opacity: 0;
   transition: margin-inline-end 100ms linear, opacity 200ms linear;
+  --menuitem-hover-background-color: purple !important;
 }
 :root[uidensity="compact"] #page-action-buttons > *[class^=urlbar-icon]{ margin-inline-end: -22px; }
 #page-action-buttons:hover > *[class^=urlbar-icon],
@@ -202,6 +205,8 @@ menupopup > menu{ padding-block: 0.3em !important; }
   margin-inline-end: 0px !important;
 }
 
+
+
 /*-------------------------------------------------------------------------------------------------------*/
 
 /*minimal_text_fields.css*/
@@ -209,7 +214,7 @@ menupopup > menu{ padding-block: 0.3em !important; }
 :root:not([customizing]){
   --lwt-toolbar-field-background-color: transparent !important;
   --lwt-toolbar-field-border-color: transparent !important;
-  /*--toolbar-bgcolor: #2a2a2e !important;*/
+  --toolbar-bgcolor: #2a2a2e !important;
 }
 
 #urlbar[open]{ background-color: var(--toolbar-bgcolor) !important; }
@@ -288,7 +293,9 @@ menupopup:not(#BMB_bookmarksPopup),
   background: var(--uc-dark-bkgnd-color) !important;
   border-radius: 3px !important;
   color: var(--uc-text-color) !important;
+  /* --button-bgcolor: black !important; */
 }
+  
 
 /* bookmarks menu is different from others */
 #BMB_bookmarksPopup{
@@ -316,13 +323,14 @@ menu{
 
 menuitem[disabled="true"],
 menu[disabled="true"]{
-  color: black !important; /*gray*/
-  text-shadow: 0 0 4px silver !important; /*delete this*/
+  color: gray !important; /*gray*/
+  text-shadow: none !important;
 }
 
 menuitem:hover,
 menu:hover{
   background-color:var(--uc-active-color) !important;
+  --menuitem-hover-background-color: var(--uc-active-color) !important;
 }
 
 menuitem[disabled="true"]:hover,
@@ -619,11 +627,6 @@ findbar > .findbar-closebutton:hover > .toolbarbutton-icon{
 
 /*-------------------------------------------------------------------------------------------------------*/
 
-/*mute button on tab*/
-/* .tab-icon-image{ opacity: 1 !important; } */
-
-/*-------------------------------------------------------------------------------------------------------*/
-
 /*hidin sumshit*/
 .bookmark-item[type="menu"][container="true"] menuitem[label="Open All in Tabs"],
 .bookmark-item[type="menu"][container="true"]
@@ -635,7 +638,7 @@ findbar > .findbar-closebutton:hover > .toolbarbutton-icon{
 #reader-mode-button, 
 #pageActionSeparator, 
 #pageActionButton,
-#pocket-button-box,
+#save-to-pocket-button,
 #nav-bar-overflow-button,
 menuseparator,
 .autocomplete-history-dropmarker, 
@@ -645,8 +648,7 @@ menuseparator,
 #fxa-toolbar-menu-button,
 #sidebar-button,
 .search-one-offs,
-#urlbar-go-button,
-.personalize-button {
+#urlbar-go-button{
   display: none !important;
 }
 
@@ -673,23 +675,31 @@ menuseparator,
 /*-------------------------------------------------------------------------------------------------------*/
 
 /*sum extra visual teaks*/
-
 #nav-bar { border: none !important; }
 #PanelUI-button, .panel-arrow                       { -moz-box-ordinal-group: 0 !important; }                                            /* hamburger menu to the left */
 #navigator-toolbox                                  { border-bottom: 0px solid var(--chrome-content-separator-color) !important; }       /* hide line at the bottom of tabbar */
 #navigator-toolbox                                  { background-color: #2a2a2e !important; }                                            /* background of background? */
 #urlbar-container, #search-container, #urlbar       { padding-block: 0px !important; margin-inline: 0px !important; }                    /* hide space between urlbar and tabbar also fill addressbar with urlbar */
-.tabbrowser-tab[fadein]                             { max-height: 28px !important; min-width: 25px !important; max-width: 140px !important; }/* set tabs height and width */
+.tabbrowser-tab[fadein]                             { min-width: 25px !important; max-width: 140px !important; }/* set tabs height and width */
 .tabbrowser-tab::after, .tabbrowser-tab::before     { border-left: none !important; }                                                    /* disapear spacer between tabs */
-.tabbrowser-tab										{ padding: 0px !important; margin-left: 1px !important;}							 /* remove space between tabs */
+.tabbrowser-tab										{ max-height: 30px !important; padding: 0px !important; margin-left: 1px !important;}							 /* remove space between tabs */
 .tab-content[selected="true"]                  		{ background-color: #0063b1 !important; background-image: none !important; }         /* active tab background */
-.tab-background[selected="true"]                    { height: 28px !important; }                                                         /* height of active tab */
+/*.tab-content:not([selected])						{ margin-top: 3px !important; }														 /* unselected tab content was unaligned this fix it*/
+/*.tab-background[selected="true"]                    { height: 38px !important; }                                                         /* height of active tab */
 .tab-background:not([selected])                     { background-color: #2a2a2e !important; }                                            /* inactive tab background */
 .tab-line                                           { height: 0px !important; }                                                          /* blue line above active tab */
 .urlbarView-body-outer                              { margin: -2px !important; }                                                      	 /* remove line of url droplist */ 
-.tab-icon-image, .tab-close-button, .tab-icon-sound { margin-top: -2px !important; }                                                     /* align icons on tab */
-.tab-text, .tab-label                               { margin-top: -2px !important; }                                                     /* align tex on tab */
+.tab-icon-image, .tab-close-button, .tab-icon-sound, .tab-text, .tab-label { margin-top: -2px !important; }        						 /* align icons on tab */
 #nav-bar{ box-shadow: none !important }																									 /* remove a line between url and tabs when not in one liner */
+
+/*-------------------------------------------------------------------------------------------------------*/
+
+/*mute button on pinned tab align*/
+.tab-icon-overlay[pinned="true"] {
+  margin-top: 4px !important;
+  margin-right: 0px !important;
+  margin-left: -6px !important; 
+}  
 
 /*-------------------------------------------------------------------------------------------------------*/
 
