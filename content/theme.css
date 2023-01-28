@@ -1,0 +1,75 @@
+/* collor pallet variablesz*/
+
+:root {
+  --uc-active-color: #0063b1;
+  --uc-hover-color: #2c313c;
+  --uc-light-bkgnd-color: #282c34;
+  --uc-dark-bkgnd-color: #21252b;
+  --uc-text-color:;
+  --uc-border-color:;
+}
+
+/*
+
+atom colors
+    #21252b
+    #282c34
+    #2c313c //selected line
+    #383b41 //hover minimizer/maximizer
+    #d41324 //hover close button
+firefox
+    #2a2a2e //window bar
+    #1c1b22 //url bar
+    #42414d //url bar selected, fav bar context menu
+    #0063b1 //active tab 
+    #59595c //hover minimizer/maximizer
+    #e81123 //hover close button
+
+*/
+
+/* toolbar */
+
+
+
+#TabsToolbar,
+#toolbar-menubar{
+  background-color: var(--uc-dark-bkgnd-color) !important;
+}
+#nav-bar{
+  background-color: var(--uc-dark-bkgnd-color) !important;
+}
+#PersonalToolbar {
+  background-color: var(--uc-light-bkgnd-color) !important;
+}
+
+/* tab */
+
+.tabbrowser-tab .tab-close-button{
+    display:none;
+  }
+  .tabbrowser-tab:not([pinned]):hover .tab-close-button{
+    display:-moz-box !important;
+  }
+
+/* active tab background */
+.tab-content[selected="true"], .tab-content:hover[selected="true"] {
+  background-color: var( --uc-active-color ) !important;
+  height: 36px !important; 
+  padding-bottom: 2px !important;
+  }  
+.tab-content:hover {
+  background-color: var( --uc-hover-color ) !important;
+  height: 36px !important;
+  padding-bottom: 2px !important;
+  }
+
+
+/* context menu */
+
+
+
+/* toolbar */
+
+
+
+/* randomshit */
