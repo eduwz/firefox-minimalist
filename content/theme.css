@@ -105,7 +105,31 @@ goal
 
 /* removes separators on urlbar droplist }*/
 .urlbarView{ 
---autocomplete-popup-separator-color: none; 
+--autocomplete-popup-separator-color: none;
+}
+
+.urlbarView-action{
+  background-color: #0063b1 !important;
+}
+
+.urlbarView-row-inner{
+  padding-block: 3px !important;
+}
+
+:is(.urlbarView-row[selected], .urlbarView-row:hover) .urlbarView-row-inner {
+background-color: #2c313a !important;
+}
+
+.urlbarView-body-inner{
+  border-radius: var(--arrowpanel-menuitem-border-radius) !important;
+}
+
+#urlbar[breakout][breakout-extend] > #urlbar-background {
+border-radius: var(--arrowpanel-menuitem-border-radius) !important;
+}
+
+#urlbar{
+  border-radius: var(--arrowpanel-menuitem-border-radius) !important;
 }
 
 /*mute button on pinned tab align*/
@@ -130,9 +154,7 @@ goal
 .subviewbutton:hover, .menuitem-iconic:hover{
   background: #2c313a !important;
 }
-#contentAreaContextMenu{
-  background-color: red !important;
-}
+
 
 :root {
   --toolbar-bgcolor: #21252b !important; /*--uc-dark-bkgnd-color*/
@@ -144,41 +166,62 @@ goal
   --lwt-text-color: white !important; /*not needed*/
   --toolbar-non-lwt-textcolor: purple !important; /**/
   --toolbar-field-hover-background-color: red !important;
-}
-
-.urlbarView-action{
-  background-color: #0063b1 !important;
-}
-
-.urlbarView-row-inner{
-  padding-block: 3px !important;
-}
-
-:is(.urlbarView-row[selected], .urlbarView-row:hover) .urlbarView-row-inner {
-background-color: #2c313a !important;
-}
-
-menupopup > menuitem:hover, 
-menupopup > menu:hover,
-menupopup > menucaption:hover  {
-  background-color: green !important;
-}
-
-#context-navigation:hover {
-  background-color: green !important;
+  --button-hover-bgcolor: transparent !important; 
+ 
 }
 
 .PanelUI-subView{
   background-color: #353b45 !important;
 }
 
+menupopup > menuitem,
+menupopup > menu{
+  appearance: none !important;
+  margin: var(--arrowpanel-menuitem-margin) !important;
+  min-height: 24px !important;
+  padding: var(--arrowpanel-menuitem-padding-block) var(--arrowpanel-menuitem-padding-inline) !important;
+  border-radius: var(--arrowpanel-menuitem-border-radius) !important;
+  background-color: transparent !important;
+  color: white !important;
+}
+
+menupopup > menuitem:hover, 
+menupopup > menu:hover,
+menupopup > menucaption:hover  {
+  background-color: #2c313a !important;
+}
+
+#context-navigaton {
+  background-color: green !important;
+  border: 2px !important;
+  }
+
 #context-back:hover{
-  background-color: red !important;
+  --arrowpanel-color: purple !important;
+}
+#context-back.main-context-menu-back-2{
+  background-color: purple !important;
 }
 .menuitem-iconic:hover {
-  background-color: red !important;
-  padding: none !important;
-  border: none !important;
-  margin: none !important;
+  background-color: #353b45 !important;
 }
+
+#context-navigation > menuitem[_moz-menuactive] .menu-iconic-icon{
+  border-radius: var(--arrowpanel-menuitem-border-radius) !important;
+}
+menupopup:not(.in-menulist){
+  --panel-padding: none !important;
+}
+#context-navigation{
+  padding:  var(--arrowpanel-menuitem-padding-inline) !important;
+}
+
+menupopup{
+  --panel-border-radius: var(--arrowpanel-border-radius) !important;
+}
+menupopup > menuseparator{
+  border-color: #494e57  !important;
+}
+
+
   /*-------------------------------------------------------------------------------------------------------*/
