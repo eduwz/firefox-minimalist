@@ -5,18 +5,17 @@
 /* INDEX */
 
 /*-------------------------------------------------------------------------------------------------------*/
-
 /* one-liner */
 @import url('content/navbar_tabs_responsive_oneliner.css');
 /* hide fav bar show on hover */
 @import url('content/autohide_bookmarks_toolbar.css');
-/* not sold yet on compact*/
-@import url('content/compact_proton.css');
-/*miminal text field*/
-@import url('content/minimal_text_fields.css');
 /*compact proton?*/
+@import url('content/compact_proton.css');
 /* theme */
 @import url('content/theme.css');
+/*miminal text field*/
+@import url('content/minimal_text_fields.css');
+
 /* @import url('content/compact_urlbar_megabar.css'); test this later myb not needed*/
 /*-------------------------------------------------------------------------------------------------------*/
 /* small hacks that could be merged into one file later */
@@ -26,7 +25,3 @@
 /*playground*/
 
 /*-------------------------------------------------------------------------------------------------------*/
-
-
-
-
