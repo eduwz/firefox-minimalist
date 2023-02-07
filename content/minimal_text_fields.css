@@ -20,7 +20,6 @@ See the above repository for updates as well as full license text. */
 #urlbar,
 .searchbar-textbox{
   box-shadow: none !important;
-  margin-top: -2px !important;
 }
 
 #tracking-protection-icon-container,
