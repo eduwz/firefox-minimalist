@@ -1,27 +1,20 @@
-/*-------------------------------------------------------------------------------------------------------*/
-/* Firefox-Minimalist Theme */
-/*-------------------------------------------------------------------------------------------------------*/
+/* This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+See the below repository for updates as well as full license text.
+https://github.com/eduwz/firefox-minimalist/tree/master/userChrome.css 
+*/
 
-/* INDEX */
-
 /*-------------------------------------------------------------------------------------------------------*/
-/* one-liner */
+/* Firefox-Minimalist */
+/*-------------------------------------------------------------------------------------------------------*/
 @import url('content/navbar_tabs_responsive_oneliner.css');
-/* hide fav bar show on hover */
 @import url('content/autohide_bookmarks_toolbar.css');
-/*compact proton?*/
 @import url('content/compact_proton.css');
+@import url('content/minimal_text_fields.css');
+@import url('content/hide_toolbox_top_bottom_borders.css');
+
 /* theme */
 @import url('content/theme.css');
-/*miminal text field*/
-@import url('content/minimal_text_fields.css');
 
-/* @import url('content/compact_urlbar_megabar.css'); test this later myb not needed*/
 /*-------------------------------------------------------------------------------------------------------*/
-/* small hacks that could be merged into one file later */
-@import url('content/hide_toolbox_top_bottom_borders.css');
-/*-------------------------------------------------------------------------------------------------------*/
-
 /*playground*/
-
 /*-------------------------------------------------------------------------------------------------------*/
