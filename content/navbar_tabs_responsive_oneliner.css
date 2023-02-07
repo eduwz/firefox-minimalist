@@ -21,7 +21,6 @@ See the above repository for updates as well as full license text. */
     --tab-block-margin: 2px !important;	
     }
   
-
   /* Modify these to change relative widths or default height */
   #navigator-toolbox{
     --uc-navigationbar-width: 40vw;
@@ -30,8 +29,7 @@ See the above repository for updates as well as full license text. */
   }
   
   #scrollbutton-up,
-  #scrollbutton-down{ border-block-width: 2px !important; }
-  
+  #scrollbutton-down{ border-block-width: 2px !important; }  
 
  /* prevent urlbar overflow on narrow windows */
  /* Dependent on how many items are in navigation toolbar ADJUST AS NEEDED */
@@ -49,9 +47,8 @@ See the above repository for updates as well as full license text. */
     --tabs-navbar-shadow-size: 0px;
   }
 
-  
   /* This isn't useful when tabs start in the middle of the window */
-  /* .titlebar-spacer[type="post-tabs"]{ display: none; } replaced out of the @media scope*/
+  .titlebar-spacer[type="pre-tabs"]{ width:8px !important}
   
   #navigator-toolbox > #nav-bar{
     margin-right:calc(100vw - var(--uc-navigationbar-width));
@@ -77,8 +74,6 @@ See the above repository for updates as well as full license text. */
 /*  #urlbar-container:not(:hover) .urlbar-history-dropmarker{ margin-inline-start: -28px; } */
   
 }
-
-  .titlebar-spacer[type="post-tabs"]{ display: none; }
 
 /* Fix customization view */
 #customization-panelWrapper > .panel-arrowbox > .panel-arrow{ margin-inline-end: initial !important; }
