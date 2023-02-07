@@ -8,7 +8,6 @@ See the above repository for updates as well as full license text. */
 /* Also prevents small vertical shift when moving tabs in compact density - who knows why */
 :root[sizemode="normal"] #titlebar{ -moz-appearance: none !important; }
 
-
 /* OPTIONAL - uncomment to remove still remaining space atop of tabs */
 /* This just increases the height of tabs by few pixels, not decrease the toolbar height */
 
