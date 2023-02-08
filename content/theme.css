@@ -95,6 +95,9 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 .subviewbutton:hover{
   background: var(--uc-hover-selected) !important;
 }
+.bookmark-item[type="menu"]{
+  margin: 0px !important;
+}
 
 /* tabs */
 #tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab]{
