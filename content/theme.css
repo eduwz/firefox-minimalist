@@ -89,6 +89,9 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 .titlebar-close {
   padding-right: 14px !important;
 }
+.subviewbutton-nav, .subviewbutton, #unified-extensions-button{
+  margin-bottom: 5px !important;
+}
 .subviewbutton:hover{
   background: var(--uc-hover-selected) !important;
 }
@@ -145,7 +148,7 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 #tabbrowser-tabs{
   border-inline-start: none !important;
 }
-#firefox-view-button {
+#firefox-view-button{
   display: none !important;
 }
 
