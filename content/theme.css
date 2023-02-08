@@ -105,6 +105,9 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
   max-height: 34px !important; 
   padding: 0px !important;
 }
+.tab-close-button{
+  margin-top: 2px !important;
+}
 .tabbrowser-tab .tab-close-button{
   display:none;
 }
@@ -138,6 +141,12 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 }
 .tab-close-button:hover{
   background-color: var(--uc-hover-selected) !important; /*old #33466c*/
+}
+#tabbrowser-tabs{
+  border-inline-start: none !important;
+}
+#firefox-view-button {
+  display: none !important;
 }
 
 /* url */
