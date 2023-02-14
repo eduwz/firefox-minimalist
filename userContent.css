@@ -12,14 +12,57 @@ https://github.com/eduwz/firefox-minimalist/tree/master/userContent.css
     url(about:newtab),
     url(about:privatebrowsing),
     url(about:blank){
-        body.activity-stream{
+        body{
             background-color: var(--uc-main-bgcolor) !important;
+            --newtab-background-color: var(--uc-main-bgcolor) !important;
         }
+        body:empty {
+        background-color: red !important;
+        --newtab-background-color: red !important;
+    }
         .search-handoff-button {
             border-radius: 50px !important;
             background-color: var(--uc-panel-bgcolor) !important;
             color: var(--uc-main-color) !important;
             --newtab-primary-action-background: var(--uc-active-color)!important;
+        }
+        .icon-settings:hover, .close-button:hover{
+            background-color: var(--uc-hover-color) !important;
+        }
+        .icon-settings:active, .close-button:active{
+            background-color: var(--uc-active-color) !important;
+        }
+        .customize-menu{
+            background-color: var(--uc-panel-bgcolor) !important;
+        }
+        .close-button, .selector{
+            background-color: var(--uc-hover-selected) !important;
+            border: none !important;
+        }
+        .slider, .sponsored-checkbox{
+            background-color: var(--uc-active-color) !important;
+        }
+        .tile {
+            background-color: var(--uc-hover-selected) !important;
+            border-radius: 50px !important;
+        }
+        .tile:hover{
+            background-color: var(--uc-hover-color) !important;
+        }
+        .top-site-icon{
+            background-color: transparent !important;
+        }
+        .search-topsite{
+            display: none !important;
+        }
+        .top-site-outer{
+            background-color: transparent !important;
+        }
+        .context-menu{
+            background-color: var(--uc-panel-bgcolor) !important;
+        }
+        .context-menu > ul > li > button:is(:focus, :hover){
+            background-color: var(--uc-hover-selected) !important;
         }
 }
 /*-------------------------------------------------------------------------------------------------------*/
