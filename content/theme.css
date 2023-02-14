@@ -108,11 +108,14 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
   min-width: 32px !important;
 }
 .tabbrowser-tab{
-  max-height: 34px !important; 
+/*  max-height: 34px !important; */
   padding: 0px !important;
 }
 .tab-close-button{
   margin-top: 2px !important;
+}
+.tab-stack{ 
+  overflow: hidden;
 }
 .tabbrowser-tab .tab-close-button{
   display:none;
@@ -120,18 +123,14 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 .tab-content[selected="true"],
 .tab-content:hover[selected="true"]{
   background-color: var( --uc-active-color ) !important;
-  height: 36px !important; 
-  padding-bottom: 2px !important;
 }  
 .tab-content:hover{
   background-color: var( --uc-hover-color ) !important;
-  height: 36px !important;
-  padding-bottom: 2px !important;
 }
 .tabbrowser-tab:not([pinned]):hover .tab-close-button{
   display:-moz-box !important;
 }
-#alltabs-button, #tabs-newtab-button{
+#alltabs-button, #tabs-newtab-button, #new-tab-button{
  --tab-border-radius: none !important;
  padding: 0px !important;
 }
@@ -261,4 +260,5 @@ background-color: var(--uc-hover-selected) !important;
 		background: var(--uc-main-bgcolor) !important;
 	}
 }
+
 /*-------------------------------------------------------------------------------------------------------*/
