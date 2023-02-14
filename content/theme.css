@@ -255,8 +255,10 @@ background-color: var(--uc-hover-selected) !important;
 }
 
 /*fix some blinking when loading pages*/
-#browser vbox#appcontent tabbrowser, #content, #tabbrowser-tabpanels, 
-browser[type=content-primary],browser[type=content] > html {
-    background: var(--uc-main-bgcolor) !important;
+@-moz-document url-prefix(about:), url-prefix(chrome://browser) {
+   browser[type="content"],
+  	browser[type="content-primary"]{
+		background: var(--uc-main-bgcolor) !important;
+	}
 }
 /*-------------------------------------------------------------------------------------------------------*/
