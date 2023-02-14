@@ -7,19 +7,17 @@ https://github.com/eduwz/firefox-minimalist/tree/master/userContent.css
 
 @import url('content/theme.css');
 
-/*-------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------*/     
 @-moz-document url(about:home),
     url(about:newtab),
     url(about:privatebrowsing),
     url(about:blank){
-        body{
-            background-color: var(--uc-main-bgcolor) !important;
+        body.activity-stream{ 
             --newtab-background-color: var(--uc-main-bgcolor) !important;
         }
         body:empty {
-        background-color: red !important;
-        --newtab-background-color: red !important;
-    }
+            background-color: var(--uc-main-bgcolor) !important;
+        }
         .search-handoff-button {
             border-radius: 50px !important;
             background-color: var(--uc-panel-bgcolor) !important;
@@ -65,4 +63,5 @@ https://github.com/eduwz/firefox-minimalist/tree/master/userContent.css
             background-color: var(--uc-hover-selected) !important;
         }
 }
+
 /*-------------------------------------------------------------------------------------------------------*/
