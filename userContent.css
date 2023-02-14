@@ -1,0 +1,25 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+See the below repository for updates as well as full license text.
+https://github.com/eduwz/firefox-minimalist/tree/master/userContent.css
+*/
+
+/*-------------------------------------------------------------------------------------------------------*/
+
+@import url('content/theme.css');
+
+/*-------------------------------------------------------------------------------------------------------*/
+@-moz-document url(about:home),
+    url(about:newtab),
+    url(about:privatebrowsing),
+    url(about:blank){
+        body.activity-stream{
+            background-color: var(--uc-main-bgcolor) !important;
+        }
+        .search-handoff-button {
+            border-radius: 50px !important;
+            background-color: var(--uc-panel-bgcolor) !important;
+            color: var(--uc-main-color) !important;
+            --newtab-primary-action-background: var(--uc-active-color)!important;
+        }
+}
+/*-------------------------------------------------------------------------------------------------------*/
