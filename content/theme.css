@@ -29,6 +29,14 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
     --lwt-accent-color: var(--uc-main-bgcolor) !important; /*mask some 2pixel lines on toolbar*/
   }
 /*-------------------------------------------------------------------------------------------------------*/
+/* navbar_tabs_responsive_oneliner.css alterations */
+@media screen and (min-width: 1100px){
+  #navigator-toolbox{
+     --uc-urlbar-min-width: 20vw;
+     --uc-toolbar-height: 32px; 
+  }
+}
+/*-------------------------------------------------------------------------------------------------------*/
 /* autohide_bookmarks_toolbar.css alterations */
 #PersonalToolbar{
     --uc-bm-height: 18px; /* Might need to adjust if the toolbar has other buttons */
@@ -63,7 +71,11 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
   background-color: var(--uc-main-bgcolor) !important;
 }
 #nav-bar{
+  height: 32px !important;
   background-color: var(--uc-main-bgcolor) !important;
+}
+#TabsToolbar{
+  height: 33px !important;
 }
 #PersonalToolbar{
   background-color: var(--uc-bgcolor) !important;
@@ -108,7 +120,7 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
   min-width: 32px !important;
 }
 .tabbrowser-tab{
-/*  max-height: 34px !important; */
+  min-height: 32px !important;
   padding: 0px !important;
 }
 .tab-close-button{
@@ -130,9 +142,11 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 .tabbrowser-tab:not([pinned]):hover .tab-close-button{
   display:-moz-box !important;
 }
-#alltabs-button, #tabs-newtab-button, #new-tab-button{
+#alltabs-button,
+#tabs-newtab-button,
+#new-tab-button{
  --tab-border-radius: none !important;
- padding: 0px !important;
+ padding-top: 0px !important;
 }
 .all-tabs-item:hover{
   background-color: transparent !important;
@@ -255,8 +269,8 @@ background-color: var(--uc-hover-selected) !important;
 
 /*fix some blinking when loading pages*/
 @-moz-document url-prefix(about:), url-prefix(chrome://browser) {
-   browser[type="content"],
-  	browser[type="content-primary"]{
+  browser[type="content"],
+  browser[type="content-primary"]{
 		background: var(--uc-main-bgcolor) !important;
 	}
 }
