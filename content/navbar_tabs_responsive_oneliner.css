@@ -7,48 +7,47 @@ See the above repository for updates as well as full license text. */
 
 /* Toolbars will be shown normally if window width goes below the value below */
 
- #nav-bar {
-    max-height: 34px !important;
-  }
-  #tabbrowser-tabs{
-  --tab-min-height: calc(var(--uc-toolbar-height) - 2 * var(--tab-block-margin,0px)) !important;
-}
+
 
 /* Modify it to suit your needs */
 @media screen and (min-width: 1100px){
-
+  :root[tabsintitlebar][sizemode="normal"]{
+    --uc-window-drag-space-width: 24px;
+  }
   :root[uidensity="compact"]{
-    --tab-block-margin: 2px !important;	
+    --tab-block-margin: 2px !important;
     }
   
   /* Modify these to change relative widths or default height */
   #navigator-toolbox{
     --uc-navigationbar-width: 40vw;
-    --uc-toolbar-height: 34px;
-    --uc-urlbar-min-width: 20vw; /* minimum width for opened urlbar */
+    --uc-toolbar-height: 40px;
+    --uc-urlbar-min-width: 50vw; /* minimum width for opened urlbar */
   }
-  
-  #scrollbutton-up,
-  #scrollbutton-down{ border-block-width: 2px !important; }  
 
- /* prevent urlbar overflow on narrow windows */
- /* Dependent on how many items are in navigation toolbar ADJUST AS NEEDED */
-  @media screen and (max-width: 1300px){
-    #urlbar-container{ min-width:unset !important; }
-    
-  }
+  #scrollbutton-up,
+  #scrollbutton-down{ border-block-width: 2px !important; }
   
+/* prevent urlbar overflow on narrow windows */
+/* Dependent on how many items are in navigation toolbar ADJUST AS NEEDED */
+  @media screen and (max-width: 1500px){
+    #urlbar-container{ min-width:unset !important }
+  }
+
   /* Override for other densities */
   :root[uidensity="compact"] #navigator-toolbox{ --uc-toolbar-height: 34px; }
-  :root[uidensity="touch"] #navigator-toolbox{ --uc-toolbar-height: 34px; }
+  :root[uidensity="touch"] #navigator-toolbox{ --uc-toolbar-height: 44px; }
 
   #TabsToolbar{
     margin-left: var(--uc-navigationbar-width);
     --tabs-navbar-shadow-size: 0px;
   }
-
+  #tabbrowser-tabs{
+  --tab-min-height: calc(var(--uc-toolbar-height) - 2 * var(--tab-block-margin,0px)) !important;
+}
+  
   /* This isn't useful when tabs start in the middle of the window */
-  .titlebar-spacer[type="pre-tabs"]{ width:8px !important}
+  .titlebar-spacer[type="pre-tabs"]{ display: none }
   
   #navigator-toolbox > #nav-bar{
     margin-right:calc(100vw - var(--uc-navigationbar-width));
@@ -56,12 +55,24 @@ See the above repository for updates as well as full license text. */
   }
 
   /* Window drag space  */
-  :root[tabsintitlebar="true"] #nav-bar{ padding-left: 24px !important }
+  :root[tabsintitlebar="true"] #nav-bar{ padding-left: var(--uc-window-drag-space-width) !important }
 
-/* Rules specific to window controls on right layout */
-  @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled"){
-    .titlebar-buttonbox-container{ position: fixed; display: block; left: 0px; z-index: 3; }
-    :root[tabsintitlebar="true"] #nav-bar{ padding-left: 96px !important; padding-right: 0px !important; }
+  /* Rules for window controls on left layout */
+
+  @media (-moz-gtk-csd-reversed-placement),
+         (-moz-platform: macos){
+    .titlebar-buttonbox-container{
+      position: fixed;
+      display: flex;
+      left: 0px;
+      z-index: 3;
+      height: var(--uc-toolbar-height);
+      align-items: center
+    }
+    :root[tabsintitlebar="true"] #nav-bar{ padding-inline: calc(var(--uc-window-drag-space-width,0px) + 84px) 0px !important; }
+  }
+  @media (-moz-platform: macos){
+    :root[tabsintitlebar="true"] #nav-bar{ padding-inline: calc(var(--uc-window-drag-space-width,0px) + 72px) 0px !important; }
   }
 
   /* 1px margin on touch density causes tabs to be too high */
@@ -71,9 +82,8 @@ See the above repository for updates as well as full license text. */
   #urlbar[open]:focus-within{ min-width: var(--uc-urlbar-min-width,none) !important; }
 
   /* Hide dropdown placeholder */
-/*  #urlbar-container:not(:hover) .urlbar-history-dropmarker{ margin-inline-start: -28px; } */
+  #urlbar-container:not(:hover) .urlbar-history-dropmarker{ margin-inline-start: -28px; }
   
 }
-
 /* Fix customization view */
 #customization-panelWrapper > .panel-arrowbox > .panel-arrow{ margin-inline-end: initial !important; }
