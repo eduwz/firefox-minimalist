@@ -8,11 +8,10 @@ https://github.com/eduwz/firefox-minimalist/tree/master/userChrome.css
 /*-------------------------------------------------------------------------------------------------------*/
 
 @import url('content/navbar_tabs_responsive_oneliner.css');
-@import url('content/autohide_bookmarks_toolbar.css');
+@import url('content/autohide_bookmarks_toolbar.css'); 
 @import url('content/compact_proton.css');
 @import url('content/minimal_text_fields.css');
 @import url('content/hide_toolbox_top_bottom_borders.css');
-@import url('userContent.css');
 
 /* theme */
 @import url('content/theme.css');
