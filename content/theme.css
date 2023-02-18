@@ -146,7 +146,7 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 #tabs-newtab-button,
 #new-tab-button{
  --tab-border-radius: none !important;
- padding-top: 0px !important;
+ padding: 0px !important;
 }
 .all-tabs-item:hover{
   background-color: transparent !important;
