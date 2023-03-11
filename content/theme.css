@@ -123,6 +123,12 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
   min-height: 32px !important;
   padding: 0px !important;
 }
+.tabbrowser-tab:hover{
+  background-color: var(--uc-hover-color) !important;
+}
+.tab-background{
+  background: none !important;
+}
 .tab-close-button{
   margin-top: 2px !important;
 }
@@ -136,9 +142,7 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 .tab-content:hover[selected="true"]{
   background-color: var( --uc-active-color ) !important;
 }  
-.tab-content:hover{
-  background-color: var( --uc-hover-color ) !important;
-}
+
 .tabbrowser-tab:not([pinned]):hover .tab-close-button{
   display:-moz-box !important;
 }
