@@ -58,6 +58,11 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 /* toolbar */
 /*-------------------------------------------------------------------------------------------------------*/
 
+#PanelUI-button {
+    order: -2 !important;
+  margin-left: 10px !important;
+  margin-right: 5px !important;
+}
 #TabsToolbar,
 #toolbar-menubar{
   background-color: var(--uc-main-bgcolor) !important;
@@ -95,6 +100,9 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 }
 #TabsToolbar{
   height: var(--uc-height) !important;
+}
+.titlebar-spacer[type="post-tabs"]{
+  display: none !important;
 }
 
 /*-------------------------------------------------------------------------------------------------------*/
@@ -269,6 +277,10 @@ menuitem:hover,
 }
 #urlbar-one-offs-header-label{
   display: none !important;
+}
+#unified-extensions-button{
+  margin-left: 5px !important;
+  margin-right: 10px !important;
 }
 
 /*-------------------------------------------------------------------------------------------------------*/
