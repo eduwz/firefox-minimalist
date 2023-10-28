@@ -18,40 +18,46 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
   --uc-height: 34px;
 }
 :root {
-    --toolbar-bgcolor: var(--uc-main-bgcolor) !important;
-    --toolbar-field-focus-border-color: var(--uc-hover-color) !important;
-    --toolbar-field-focus-background-color: var(--uc-panel-bgcolor) !important;
-    --toolbar-field-hover-background-color: var(--uc-hover-selected) !important;
-    --toolbarbutton-active-background: var(--uc-active-color) !important;
-    --toolbarbutton-hover-background: var(--uc-hover-color) !important;
-    --arrowpanel-color: var(--uc-main-color) !important;
-    --lwt-text-color: var(--uc-main-color) !important;
-    --toolbar-non-lwt-textcolor: var(--uc-main-bgcolor) !important;
-    --button-hover-bgcolor: transparent !important;
-    --panel-separator-color: var(--uc-separator-color) !important;
-    --tab-block-margin: none !important;
+  --toolbar-bgcolor: var(--uc-main-bgcolor) !important;
+  --toolbar-field-focus-border-color: var(--uc-hover-color) !important;
+  --toolbar-field-focus-background-color: var(--uc-panel-bgcolor) !important;
+  --toolbar-field-hover-background-color: var(--uc-hover-selected) !important;
+  --toolbarbutton-active-background: var(--uc-active-color) !important;
+  --toolbarbutton-hover-background: var(--uc-hover-color) !important;
+  --arrowpanel-color: var(--uc-main-color) !important;
+  --lwt-text-color: var(--uc-main-color) !important;
+  --toolbar-non-lwt-textcolor: var(--uc-main-bgcolor) !important;
+  --button-hover-bgcolor: transparent !important;
+  --panel-separator-color: var(--uc-separator-color) !important;
+  --tab-block-margin: none !important;
 }
+
 /*-------------------------------------------------------------------------------------------------------*/
 /* navbar_tabs_responsive_oneliner.css */
 /*-------------------------------------------------------------------------------------------------------*/
+
 @media screen and (min-width: 1100px){
   #navigator-toolbox{
       --uc-urlbar-min-width: 20vw;
       --uc-toolbar-height: var(--uc-height);
   }
 }
+
 /*-------------------------------------------------------------------------------------------------------*/
 /* autohide_bookmarks_toolbar.css */
 /*-------------------------------------------------------------------------------------------------------*/
+
 #PersonalToolbar{
   --uc-autohide-toolbar-delay: 300ms;
 }
 #PersonalToolbar{
   --toolbar-bgcolor: var(--uc-main-bgcolor) !important;
 }
+
 /*-------------------------------------------------------------------------------------------------------*/
 /* toolbar */
 /*-------------------------------------------------------------------------------------------------------*/
+
 #TabsToolbar,
 #toolbar-menubar{
   background-color: var(--uc-main-bgcolor) !important;
@@ -90,9 +96,11 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 #TabsToolbar{
   height: var(--uc-height) !important;
 }
+
 /*-------------------------------------------------------------------------------------------------------*/
 /* tabs */
 /*-------------------------------------------------------------------------------------------------------*/
+
 .tabbrowser-tab{
   min-height: var(--uc-height) !important;
 }
@@ -118,9 +126,11 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 #firefox-view-button{
   display: none !important;
 }
+
 /*-------------------------------------------------------------------------------------------------------*/
 /* url */
 /*-------------------------------------------------------------------------------------------------------*/
+
 #searchbar,
 #urlbar,
 .searchbar-textbox{
@@ -159,9 +169,11 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 #urlbar-background{
   border-radius: var(--uc-border-radius) !important;
 }
+
 /*-------------------------------------------------------------------------------------------------------*/
 /* menus */
 /*-------------------------------------------------------------------------------------------------------*/
+
 .panel-subview-body,
 .menupopup-arrowscrollbox,
 menupopup > menuitem[_moz-menuactive="true"]{
@@ -201,13 +213,16 @@ menupopup{
 #context-sep-navigation{
   display: none !important;
 }
+
 /*-------------------------------------------------------------------------------------------------------*/
 /* others */
 /*-------------------------------------------------------------------------------------------------------*/
+
 #editBMPanel_chooseFolderSeparator,
 #editBMPanel_foldersSeparator{
   display: none !important;
 }
+stack input,
 #editBMPanel_folderTree,
 #editBMPanel_newFolderButton,
 #editBookmarkPanelRemoveButton,
@@ -218,6 +233,8 @@ menupopup{
 #editBMPanel_tagsField{
   background-color: var(--uc-bgcolor) !important;
 }
+#password-notification,
+.popup-notification-body-container,
 #permission-popup-mainView,
 .panel-header,
 #protections-popup-mainView,
@@ -228,6 +245,10 @@ menupopup{
 .unified-extensions-item-menu-button.subviewbutton {
   border-radius: var(--uc-border-radius) !important;
 }
+.popup-notification-dropmarker:hover,
+.popup-notification-primary-button:hover,
+.popup-notification-secondary-button:hover,
+.autocomplete-richlistitem:hover,
 menuitem:hover,
 #editBMPanel_folderMenuList:hover,
 #editBMPanel_newFolderButton:hover,
@@ -246,4 +267,5 @@ menuitem:hover,
 #urlbar-one-offs-header-label{
   display: none !important;
 }
+
 /*-------------------------------------------------------------------------------------------------------*/
