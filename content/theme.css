@@ -180,6 +180,7 @@ menupopup > menuitem[_moz-menuactive="true"]{
   background: var(--uc-panel-bgcolor) !important;
   color: var(--uc-main-color) !important;
 }
+.download-state:hover,
 menupopup > menuitem:hover, 
 menupopup > menu:hover,
 menupopup > menucaption:hover  {
@@ -233,6 +234,7 @@ stack input,
 #editBMPanel_tagsField{
   background-color: var(--uc-bgcolor) !important;
 }
+#downloadsPanel-mainView,
 #password-notification,
 .popup-notification-body-container,
 #permission-popup-mainView,
@@ -245,6 +247,7 @@ stack input,
 .unified-extensions-item-menu-button.subviewbutton {
   border-radius: var(--uc-border-radius) !important;
 }
+.downloadButton:hover,
 .popup-notification-dropmarker:hover,
 .popup-notification-primary-button:hover,
 .popup-notification-secondary-button:hover,
