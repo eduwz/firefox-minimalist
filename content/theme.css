@@ -242,6 +242,7 @@ stack input,
 #editBMPanel_tagsField{
   background-color: var(--uc-bgcolor) !important;
 }
+.PanelUI-subView,
 #downloadsPanel-mainView,
 #password-notification,
 .popup-notification-body-container,
