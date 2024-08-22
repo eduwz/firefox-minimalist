@@ -294,5 +294,8 @@ menuitem:hover,
 #unified-extensions-button{
   margin-right: 10px !important;
 }
+.browserContainer{
+  background-color: var(--uc-main-bgcolor)!important;
+}
 
 /*-------------------------------------------------------------------------------------------------------*/
