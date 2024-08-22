@@ -11,9 +11,12 @@ https://github.com/eduwz/firefox-minimalist/tree/master/userContent.css
 @-moz-document url(about:home),
     url(about:newtab),
     url(about:privatebrowsing),
-    url(about:blank){
+    url(about:blank),
+    url(about:logo),
+    url(about:robots){
         body.activity-stream{ 
             --newtab-background-color: var(--uc-main-bgcolor) !important;
+            background-color: var(--uc-main-bgcolor) !important;
         }
         body:empty {
             background-color: var(--uc-main-bgcolor) !important;
