@@ -5,31 +5,32 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 
 /*-------------------------------------------------------------------------------------------------------*/
 
-:root {
-  --uc-main-bgcolor: #21252b;
-  --uc-bgcolor: #282c34;
-  --uc-active-color: #0063b1;
-  --uc-hover-color: #33466c;
-  --uc-hover-selected: #2c313c;
-  --uc-panel-bgcolor: #353b45;
-  --uc-main-color: #fff;
-  --uc-separator-color: #494e57;
-  --uc-border-radius: 4px;
-  --uc-height: 34px;
+:root{
+    --uc-main-bgcolor: #21252b;
+    --uc-bgcolor: #282c34;
+    --uc-active-color: #0063b1;
+    --uc-hover-color: #33466c;
+    --uc-hover-selected: #2c313c;
+    --uc-panel-bgcolor: #353b45;
+    --uc-main-color: #fff;
+    --uc-separator-color: #494e57;
+    --uc-border-radius: 4px;
+    --uc-height: 30px;
 }
-:root {
-  --toolbar-bgcolor: var(--uc-main-bgcolor) !important;
-  --toolbar-field-focus-border-color: var(--uc-hover-color) !important;
-  --toolbar-field-focus-background-color: var(--uc-panel-bgcolor) !important;
-  --toolbar-field-hover-background-color: var(--uc-hover-selected) !important;
-  --toolbarbutton-active-background: var(--uc-active-color) !important;
-  --toolbarbutton-hover-background: var(--uc-hover-color) !important;
-  --arrowpanel-color: var(--uc-main-color) !important;
-  --lwt-text-color: var(--uc-main-color) !important;
-  --toolbar-non-lwt-textcolor: var(--uc-main-bgcolor) !important;
-  --button-hover-bgcolor: transparent !important;
-  --panel-separator-color: var(--uc-separator-color) !important;
-  --tab-block-margin: none !important;
+:root{
+    --toolbar-bgcolor: var(--uc-main-bgcolor) !important;
+    --toolbar-field-focus-border-color: var(--uc-hover-color) !important;
+    --toolbar-field-focus-background-color: var(--uc-panel-bgcolor) !important;
+    --toolbar-field-hover-background-color: var(--uc-hover-selected) !important;
+    --toolbarbutton-active-background: var(--uc-active-color) !important;
+    --toolbarbutton-hover-background: var(--uc-hover-color) !important;
+    --arrowpanel-color: var(--uc-main-color) !important;
+    --lwt-text-color: var(--uc-main-color) !important;
+    --toolbar-non-lwt-textcolor: var(--uc-main-bgcolor) !important;
+    --button-hover-bgcolor: transparent !important;
+    --panel-separator-color: var(--uc-separator-color) !important;
+    --tab-block-margin: none !important;
+    --tabpanel-background-color: var(--uc-main-color) !important;
 }
 
 /*-------------------------------------------------------------------------------------------------------*/
@@ -48,16 +49,24 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 /*-------------------------------------------------------------------------------------------------------*/
 
 #PersonalToolbar{
-  --uc-autohide-toolbar-delay: 300ms;
+--uc-autohide-toolbar-delay: 300ms;
 }
 #PersonalToolbar{
-  --toolbar-bgcolor: var(--uc-main-bgcolor) !important;
+--toolbar-bgcolor: var(--uc-main-bgcolor) !important;
 }
 
 /*-------------------------------------------------------------------------------------------------------*/
 /* toolbar */
 /*-------------------------------------------------------------------------------------------------------*/
 
+#titlebar,
+#nav-bar,
+toolbarbutton,
+toolbaritem,
+#urlbar-container,
+#urlbar-input-container{ 
+    max-height: var(--uc-height) !important;
+}
 #PanelUI-button {
     order: -2 !important;
   margin-left: 10px !important;
@@ -67,7 +76,6 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 #toolbar-menubar{
   background-color: var(--uc-main-bgcolor) !important;
 }
-
 .titlebar-button{
   border-radius: var(--uc-border-radius) !important;
 }
@@ -94,13 +102,6 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 .subviewbutton:hover{
   background: var(--uc-hover-selected) !important;
 }
-#nav-bar{
-  height: var(--uc-height) !important;
-  background-color: var(--uc-main-bgcolor) !important;
-}
-#TabsToolbar{
-  height: var(--uc-height) !important;
-}
 .titlebar-spacer[type="post-tabs"]{
   display: none !important;
 }
@@ -109,8 +110,12 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 /* tabs */
 /*-------------------------------------------------------------------------------------------------------*/
 
-.tabbrowser-tab{
-  min-height: var(--uc-height) !important;
+.tabbrowser-tab,
+#TabsToolbar-customization-target.customization-target{
+  height: var(--uc-height) !important;
+}
+.tab-content{
+  max-height: var(--uc-height) !important;
 }
 .tabbrowser-tab[fadein]{
   max-width: 140px !important;
@@ -139,6 +144,9 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 /* url */
 /*-------------------------------------------------------------------------------------------------------*/
 
+#urlbar-input{
+    height: var(--uc-height) !important;
+}
 #searchbar,
 #urlbar,
 .searchbar-textbox{
@@ -176,6 +184,9 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 #urlbar,
 #urlbar-background{
   border-radius: var(--uc-border-radius) !important;
+}
+#urlbar-background{
+  outline: none !important;
 }
 
 /*-------------------------------------------------------------------------------------------------------*/
@@ -250,7 +261,8 @@ stack input,
 .panel-header,
 #protections-popup-mainView,
 #identity-popup-mainView,
-.cui-widget-panelview{
+.cui-widget-panelview,
+.tab-preview-text-container{
   background-color: var(--uc-panel-bgcolor) !important;
 }
 .unified-extensions-item-menu-button.subviewbutton {
