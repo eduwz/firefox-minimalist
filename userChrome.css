@@ -9,8 +9,9 @@ https://github.com/eduwz/firefox-minimalist/tree/master/userChrome.css
 
 @import url('content/navbar_tabs_responsive_oneliner.css');
 @import url('content/autohide_bookmarks_toolbar.css');
-@import url('content/compact_proton.css');
+@import url('content/compact_proton.css'); 
 @import url('content/minimal_text_fields.css');
+@import url('compact_extensions_panel.css');
 /*@import url('content/icon_only_tabs.css');*/
 
 /* theme */
