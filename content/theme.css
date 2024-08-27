@@ -50,6 +50,7 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 
 #PersonalToolbar{
 --uc-autohide-toolbar-delay: 300ms;
+--uc-bm-padding: 2px;
 }
 #PersonalToolbar{
 --toolbar-bgcolor: var(--uc-main-bgcolor) !important;
@@ -73,7 +74,8 @@ toolbaritem,
   margin-right: 5px !important;
 }
 #TabsToolbar,
-#toolbar-menubar{
+#toolbar-menubar,
+#navigator-toolbox{
   background-color: var(--uc-main-bgcolor) !important;
 }
 .titlebar-button{
@@ -105,10 +107,14 @@ toolbaritem,
 .titlebar-spacer[type="post-tabs"]{
   display: none !important;
 }
-#navigator-toolbox{
+#navigator-toolbox {
   border: none !important;
+  :root[tabsintitlebar] & {
+    &:-moz-window-inactive {
+      opacity: var(--inactive-titlebar-opacity);
+    }
+  }
 }
-
 /*-------------------------------------------------------------------------------------------------------*/
 /* tabs */
 /*-------------------------------------------------------------------------------------------------------*/
