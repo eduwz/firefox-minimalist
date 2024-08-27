@@ -105,6 +105,9 @@ toolbaritem,
 .titlebar-spacer[type="post-tabs"]{
   display: none !important;
 }
+#navigator-toolbox{
+  border: none !important;
+}
 
 /*-------------------------------------------------------------------------------------------------------*/
 /* tabs */
@@ -261,8 +264,10 @@ stack input,
 .panel-header,
 #protections-popup-mainView,
 #identity-popup-mainView,
+.tab-preview-text-container,
 .cui-widget-panelview,
-.tab-preview-text-container{
+#addon-webext-permissions-notification,
+#appMenu-addon-installed-notification{
   background-color: var(--uc-panel-bgcolor) !important;
 }
 .unified-extensions-item-menu-button.subviewbutton {
@@ -294,8 +299,8 @@ menuitem:hover,
 #unified-extensions-button{
   margin-right: 10px !important;
 }
-.browserContainer{
-  background-color: var(--uc-main-bgcolor)!important;
+#tabbrowser-tabpanels{
+  background-color: var(--uc-main-bgcolor) !important;
 }
 
 /*-------------------------------------------------------------------------------------------------------*/
