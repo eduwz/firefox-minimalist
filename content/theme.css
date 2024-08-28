@@ -31,6 +31,7 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
     --panel-separator-color: var(--uc-separator-color) !important;
     --tab-block-margin: none !important;
     --tabpanel-background-color: var(--uc-main-color) !important;
+    --urlbarView-separator-color: none !important;
 }
 
 /*-------------------------------------------------------------------------------------------------------*/
@@ -50,7 +51,7 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 
 #PersonalToolbar{
 --uc-autohide-toolbar-delay: 300ms;
---uc-bm-padding: 2px;
+--uc-bm-padding: 3px;
 }
 #PersonalToolbar{
 --toolbar-bgcolor: var(--uc-main-bgcolor) !important;
