@@ -47,7 +47,9 @@ https://github.com/eduwz/firefox-minimalist/tree/master/userContent.css
             background-color: var(--uc-hover-selected) !important;
             border-radius: 50px !important;
         }
-        .tile:hover{
+        .tile:hover,
+        .weatherInfoLink:hover,
+        .weatherButtonContextMenu:hover{
             background-color: var(--uc-hover-color) !important;
         }
         .top-site-icon{
