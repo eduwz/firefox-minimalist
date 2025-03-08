@@ -14,8 +14,6 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
     --uc-panel-bgcolor: #353b45;
     --uc-main-color: #fff;
     --uc-separator-color: #494e57;
-    --uc-border-radius: 4px;
-    --uc-height: 30px;
 }
 :root{
     --toolbar-bgcolor: var(--uc-main-bgcolor) !important;
@@ -25,6 +23,7 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
     --toolbarbutton-active-background: var(--uc-active-color) !important;
     --toolbarbutton-hover-background: var(--uc-hover-color) !important;
     --arrowpanel-color: var(--uc-main-color) !important;
+    --arrowpanel-background: var(--uc-panel-bgcolor) !important;
     --lwt-text-color: var(--uc-main-color) !important;
     --toolbar-non-lwt-textcolor: var(--uc-main-bgcolor) !important;
     --button-hover-bgcolor: transparent !important;
@@ -33,28 +32,57 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
     --tabpanel-background-color: var(--uc-main-color) !important;
     --urlbarView-separator-color: none !important;
 }
+:root{
+    --uc-border-radius: 4px !important;
+    --uc-height: 30px !important;
+    --tab-overflow-clip-margin: 0px !important; /*spacing between tabs*/
+    --tab-block-margin: -2px !important;
+    --urlbar-min-height: 30px !important;
+    --tab-min-height: 30px !important;
+    --tab-max-height: 30px !important;
+}
 
 /*-------------------------------------------------------------------------------------------------------*/
 /* navbar_tabs_responsive_oneliner.css */
 /*-------------------------------------------------------------------------------------------------------*/
 
 @media screen and (min-width: 1100px){
-  #navigator-toolbox{
-      --uc-urlbar-min-width: 20vw;
-      --uc-toolbar-height: var(--uc-height);
-  }
+    #navigator-toolbox{
+        --uc-urlbar-min-width: 20vw;
+        --uc-toolbar-height: var(--uc-height);
+    }
 }
-
+  
 /*-------------------------------------------------------------------------------------------------------*/
 /* autohide_bookmarks_toolbar.css */
 /*-------------------------------------------------------------------------------------------------------*/
-
+  
 #PersonalToolbar{
---uc-autohide-toolbar-delay: 300ms;
---uc-bm-padding: 3px;
+    --toolbar-bgcolor: var(--uc-main-bgcolor) !important;
+    --uc-autohide-toolbar-focus-rotation: 90deg;
 }
-#PersonalToolbar{
---toolbar-bgcolor: var(--uc-main-bgcolor) !important;
+
+/*-------------------------------------------------------------------------------------------------------*/
+/* media queries */ 
+/*-------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 1340px){
+#unified-extensions-button{
+    display: none !important;
+}
+#nav-bar-overflow-button{
+    display: none !important;
+}
+}
+@media screen and (max-width: 1100px){
+#nav-bar{
+    zmax-height: var(--uc-height);
+    margin-block-end: -1px !important;
+}
+#navigator-toolbox{
+    max-height: calc(var(--uc-height) * 2) !important;
+    margin-block-start: 1px !important;
+}
 }
 
 /*-------------------------------------------------------------------------------------------------------*/
@@ -66,8 +94,13 @@ https://github.com/eduwz/firefox-minimalist/tree/master/content/theme.css
 toolbarbutton,
 toolbaritem,
 #urlbar-container,
-#urlbar-input-container{ 
+.urlbar-input-container{ 
     max-height: var(--uc-height) !important;
+}
+.urlbar-input-container,
+#urlbar-background,
+toolbarbutton{
+  margin-block-start: none !important;
 }
 #PanelUI-button {
     order: -2 !important;
@@ -84,13 +117,18 @@ toolbaritem,
 }
 .titlebar-min:hover,
 .titlebar-max:hover,
-.titlebar-restore:hover{
+.titlebar-restore:hover,
+#urlbar-searchmode-switcher:hover{
   background-color: var(--uc-hover-color) !important;
 }
 .titlebar-min:active,
 .titlebar-max:active,
 .titlebar-restore:active{
   background-color: var(--uc-active-color) !important;
+}
+#urlbar-searchmode-switcher{
+  background-color: var(--uc-bgcolor-) !important;
+  margin-block-start: 6px !important;
 }
 .titlebar-button {
   padding-inline: 14px !important;
@@ -99,8 +137,8 @@ toolbaritem,
 .toolbarbutton-1{
   padding: 0px !important;
 }
-.bookmark-item[type="menu"]{
-  margin: 0px !important;
+.bookmark-item{
+  margin: 4px !important;
 }
 .subviewbutton:hover{
   background: var(--uc-hover-selected) !important;
@@ -108,14 +146,10 @@ toolbaritem,
 .titlebar-spacer[type="post-tabs"]{
   display: none !important;
 }
-#navigator-toolbox {
+#navigator-toolbox{
   border: none !important;
-  :root[tabsintitlebar] & {
-    &:-moz-window-inactive {
-      opacity: var(--inactive-titlebar-opacity);
-    }
-  }
 }
+
 /*-------------------------------------------------------------------------------------------------------*/
 /* tabs */
 /*-------------------------------------------------------------------------------------------------------*/
@@ -124,9 +158,12 @@ toolbaritem,
 #TabsToolbar-customization-target.customization-target{
   height: var(--uc-height) !important;
 }
+/*
 .tab-content{
-  max-height: var(--uc-height) !important;
+  max-height: var(--uc-height) !important;  
 }
+this is affecting pages contents somehow, reminder look into later.
+*/
 .tabbrowser-tab[fadein]{
   max-width: 140px !important;
   min-width: 32px !important;
